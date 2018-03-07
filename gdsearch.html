@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iSQ - Q-Fragebogen</title>
+
+    <link rel="stylesheet" href="./lib/css/base.css">
+    <link rel="stylesheet" href="./lib/css/bootstrap.css">
+    <link rel="stylesheet" href="./lib/css/atlas.css">
+    <link rel="stylesheet" href="./lib/css/atlas-font-awesome.css">
+
+    <style>
+        html {
+            background: #fff;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            background: #fff;
+        }
+
+        h2 {
+            color: #999;
+        }
+
+        .header-placeholder {
+            width: 100%;
+            height: 100px;
+            background: #f1f1f1;
+        }
+
+        .content-placeholder {
+            display: flex;
+
+        }
+
+        .menu-placeholder {
+            width: 350px;
+            height: 850px;
+            flex: 0 1 350px;
+            background: #f1f1f1;
+        }
+    </style>
+
+    <script src="./lib/js/jquery.min.js"></script>
+    <script src="./lib/js/popper.js"></script>
+    <script src="./lib/js/bootstrap.js"></script>
+</head>
+
+<body>
+
+    <div class="header-placeholder">&nbsp;</div>
+
+    <div class="content-placeholder">
+        <div class="menu-placeholder">&nbsp;</div>
+        <div class="container pt-3 p-0 p-md-3">
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#lexFullScreenModal">GDSearch</button>
+        </div>
+    </div>
+
+        <div aria-labelledby="lexLargeModalLabel" class="fade modal" id="lexFullScreenModal" role="dialog" style="display: none;"
+            tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button aria-labelledby="Close" class="btn btn-default close" data-dismiss="modal" role="button" type="button">
+                            <svg aria-hidden="true" class="lexicon-icon lexicon-icon-times" viewbox="0 0 512 512">
+                                <path class="lexicon-icon-outline" d="M295.781 256l205.205-205.205c10.998-10.998 10.998-28.814 0-39.781-10.998-10.998-28.815-10.998-39.781 0l-205.205 205.205-205.205-205.238c-10.966-10.998-28.814-10.998-39.781 0-10.998 10.998-10.998 28.814 0 39.781l205.205 205.238-205.205 205.205c-10.998 10.998-10.998 28.815 0 39.781 5.467 5.531 12.671 8.265 19.874 8.265s14.407-2.734 19.907-8.233l205.205-205.238 205.205 205.205c5.5 5.5 12.703 8.233 19.906 8.233s14.407-2.734 19.906-8.233c10.998-10.998 10.998-28.815 0-39.781l-205.238-205.205z"></path>
+                            </svg>
+                        </button>
+                        <button class="btn btn-default modal-primary-action-button visible-xs" type="button">
+                            <span aria-hidden="true" class="lexicon-icon lexicon-icon-check">&nbsp;</span>
+                        </button>
+
+                        <h4 class="modal-title">Employee Search BMW Group Directory</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div>
+                            <div class="col-md-6 input-group">
+                                <input class="form-control" type="text" placeholder="Search (firstname or lastname or department">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <svg class="lexicon-icon lexicon-icon-search" viewBox="0 0 512 512">
+                                            <path class="lexicon-icon-outline" d="M 503.254 467.861 l -133.645 -133.645 c 27.671 -35.13 44.344 -79.327 44.344 -127.415 c 0 -113.784 -92.578 -206.362 -206.362 -206.362 s -206.362 92.578 -206.362 206.362 s 92.578 206.362 206.362 206.362 c 47.268 0 90.735 -16.146 125.572 -42.969 l 133.851 133.851 c 5.002 5.002 11.554 7.488 18.106 7.488 s 13.104 -2.486 18.106 -7.488 c 10.004 -10.003 10.004 -26.209 0.029 -36.183 Z M 52.446 206.801 c 0 -85.558 69.616 -155.173 155.173 -155.173 s 155.174 69.616 155.174 155.173 s -69.616 155.173 -155.173 155.173 s -155.173 -69.616 -155.173 -155.173 Z"
+                                            />
+                                        </svg>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <table class="table table-autofit table-striped card">
+                            <thead>
+                                <tr>
+                                    <th class="table-cell-content">Lastname</th>
+                                    <th class="table-cell-content">Firstname</th>
+                                    <th class="table-cell-content">Department</th>
+                                    <th class="table-cell-content"></th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="table-cell-content">Petresen</th>
+                                    <th class="table-cell-content">Andreas-Wolfgang</th>
+                                    <th class="table-cell-content">MD-401</th>
+                                    <th class="table-cell-content text-right">
+                                        <button class="btn btn-primary" type="button">select</button>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th class="table-cell-content">Hansen</th>
+                                    <th class="table-cell-content">Petra</th>
+                                    <th class="table-cell-content">MD-41</th>
+                                    <th class="table-cell-content text-right">
+                                        <button class="btn btn-primary" type="button">select</button>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th class="table-cell-content">Langernachname-Wolfsteiner</th>
+                                    <th class="table-cell-content">Petruschka</th>
+                                    <th class="table-cell-content">FG-462</th>
+                                    <th class="table-cell-content text-right">
+                                        <button class="btn btn-primary" type="button">select</button>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th class="table-cell-content">Müller</th>
+                                    <th class="table-cell-content">Petra</th>
+                                    <th class="table-cell-content">MD-41</th>
+                                    <th class="table-cell-content text-right">
+                                        <button class="btn btn-primary" type="button">select</button>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th class="table-cell-content">Petreuser-Schanrrentaier</th>
+                                    <th class="table-cell-content">Michael</th>
+                                    <th class="table-cell-content">FG-462</th>
+                                    <th class="table-cell-content text-right">
+                                        <button class="btn btn-primary" type="button">select</button>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-10">
+                                <ul class="pagination">
+                                    <li class="disabled">
+                                        <a href="#1">
+                                            <span aria-hidden="true" class="icon-caret-left"></span>
+                                        </a>
+                                    </li>
+                                    <li class="disabled">
+                                        <a href="#1">
+                                            <span aria-hidden="true" class="icon-double-angle-left"></span>
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#1">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#1">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#1">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#1">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="#1">5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#1">6</a>
+                                    </li>
+                                    <li>
+                                        <a href="#1">7</a>
+                                    </li>
+                                    <li>
+                                        <a href="#1">8</a>
+                                    </li>
+                                    <li>
+                                        <a href="#1">9</a>
+                                    </li>
+                                    <li>
+                                        <a href="#1">10</a>
+                                    </li>
+                                    <li class="ellipsis">
+                                        <a href="#1">...</a>
+                                    </li>
+                                    <li>
+                                        <a href="#1">16</a>
+                                    </li>
+                                    <li>
+                                        <a href="#1">
+                                            <span aria-hidden="true" class="icon-double-angle-right"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#1">
+                                            <span aria-hidden="true" class="icon-caret-right"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer row">
+                        <div class="text-right">
+                            <button class="btn btn-default" type="button">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>iSQ - Q-Fragebogen</title>
+
+        <link rel="stylesheet" href="./lib/css/base.css">
+        <link rel="stylesheet" href="./lib/css/bootstrap.css">
+        <link rel="stylesheet" href="./lib/css/atlas.css">
+        <link rel="stylesheet" href="./lib/css/atlas-font-awesome.css">
+
+        <style>
+            html {
+                background: #fff;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                background: #fff;
+            }
+            h2 {
+                color: #999;
+            }
+            .header-placeholder {
+                width: 100%;
+                height: 100px;
+                background: #f1f1f1;
+            }
+            .content-placeholder {
+                display: flex;
+
+            }
+            .menu-placeholder {
+                width: 350px;
+                height: 850px;
+                flex: 0 1 350px;
+                background: #f1f1f1;
+            }
+        </style>
+
+        <script src="./lib/js/jquery.min.js"></script>
+        <script src="./lib/js/popper.js"></script>
+        <script src="./lib/js/bootstrap.js"></script>
+    </head>
+    <body>
+
+        <div class="header-placeholder">&nbsp;</div>
+
+        <div class="content-placeholder">
+            <div class="menu-placeholder">&nbsp;</div>
+
+            <div class="container pt-3 p-0 p-md-3">
+                <h2 class="m-3 m-md-0">Checklist</h2>
+
+                <hr /><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span>
+
+                <div class="management-bar">
+
+                    <div class="collapse management-bar-collapse" id="mgmtBarCollapse00">
+                        <ul class="nav management-bar-nav">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#1" aria-expanded="false">
+                                    <span class="management-bar-item-title">Sort</span>
+                                    <svg aria-hidden="true" class="lexicon-icon lexicon-icon-caret-double-l" viewBox="0 0 512 512">
+
+                                        <path class="lexicon-icon-outline" d="M347.913 199.336l-81.538-85c-5.413-5.642-14.188-5.642-19.6 0l-81.538 85c-8.731 9.101-2.548 24.664 9.8 24.664h163.077c12.348 0 18.531-15.563 9.8-24.664z"></path>
+                                        <path class="lexicon-icon-outline" d="M165.236 312.664l81.538 85c5.412 5.642 14.188 5.642 19.6 0l81.538-85c8.731-9.101 2.548-24.664-9.8-24.664h-163.077c-12.347 0-18.531 15.563-9.8 24.664z"></path>
+                                    </svg>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-header">Filterung nach</li>
+                                    <li>
+                                        <form>
+                                            <div class="checkbox checkbox-default">
+                                                <label>
+                                                    <input checked="" value="" type="checkbox">
+                                                    DONE
+                                                </label>
+                                            </div>
+                                            <div class="checkbox checkbox-default">
+                                                <label>
+                                                    <input checked="" value="" type="checkbox">
+                                                    OVERDUE
+                                                </label>
+                                            </div>
+                                            <div class="checkbox checkbox-default">
+                                                <label>
+                                                    <input checked="" value="" type="checkbox">
+                                                    EXCLUDED
+                                                </label>
+                                            </div>
+                                            <div class="checkbox checkbox-default">
+                                                <label>
+                                                    <input checked="" value="" type="checkbox">
+                                                    OPEN
+                                                </label>
+                                            </div>
+
+                                        </form>
+                                    </li>
+                                    <li class="dropdown-header">Sortiert nach</li>
+                                    <li>
+                                        <form>
+                                            <div class="custom-control custom-radio">
+                                                <label>
+                                                    <input class="custom-control-input" id="radio1" name="radio" type="radio">
+                                                    Datum
+                                                </label>
+                                            </div>
+
+                                            <div class="custom-control custom-radio">
+                                                <label>
+                                                    <input class="custom-control-input" id="radio2" name="radio" type="radio">
+                                                    Source/Tool
+                                                </label>
+                                            </div>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="btn btn-default hidden-xs" href="#1">
+                                    <span class="icon-monospaced">
+                                        <span aria-hidden="true" class="icon-caret-up"></span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btn btn-default hidden-xs" href="#1">
+                                    <span class="icon-monospaced">
+                                        <span aria-hidden="true" class="icon-caret-down"></span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="management-bar-header-right">
+                        <button class="btn btn-primary close-modal" data-dismiss="modal" type="button">
+                            <span aria-hidden="true" class="icon-monospaced icon-plus">‍</span>
+                        </button>
+                    </div>
+                </div>
+
+
+
+                <table class="table table-autofit table-striped card">
+                    <thead>
+                        <tr>
+                            <th class="table-cell-content">Group</th>
+                            <th class="table-cell-content">Activity</th>
+                            <th class="table-cell-content">State</th>
+                            <th class="table-cell-content">Target Date</th>
+                            <th class="table-cell-content">Comment</th>
+                            <th class="table-cell-content">Responsible QMS</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-cell-content">Q-Questionnaire</td>
+                            <td class="table-cell-content">Sending to supplier</td>
+                            <td class="table-cell-content">
+                                <span class="badge badge-sm badge-danger">OVERDUE</span>
+                            </td>
+                            <td class="table-cell-content">12.02.17</td>
+                            <td class="table-cell-content">This is a comment ...</td>
+                            <td class="table-cell-content">Peter Maier, FG-123</td>
+                            <td class="table-cell-content">
+                                <div class="dropdown">
+                                    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#1">
+                                        <svg aria-hidden="true" class="icon-monospaced lexicon-icon lexicon-icon-ellipsis-v" viewbox="0 0 512 512">
+                                            <path class="lexicon-icon-outline" d="M319 255.5c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                            <path class="lexicon-icon-outline" d="M319 448c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                            <path class="lexicon-icon-outline" d="M319 64c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="#1">Done</a></li>
+                                        <li><a href="#1">Reopen</a></li>
+                                        <li><a href="#1">Exclude</a></li>
+                                        <li><a data-target="#lexFullScreenModal" data-toggle="modal">Edit</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-cell-content">LSV</td>
+                            <td class="table-cell-content">Sending to supplier</td>
+                            <td class="table-cell-content">
+                                <span class="badge badge-sm badge-success">DONE</span>
+                            </td>
+                            <td class="table-cell-content">12.03.17</td>
+                            <td class="table-cell-content">This is a longer, longer comment ...</td>
+                            <td class="table-cell-content">Peter Maier, FG-123</td>
+                            <td class="table-cell-content">
+                                <div class="dropdown">
+                                    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#1">
+                                        <svg aria-hidden="true" class="icon-monospaced lexicon-icon lexicon-icon-ellipsis-v" viewbox="0 0 512 512">
+                                            <path class="lexicon-icon-outline" d="M319 255.5c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                            <path class="lexicon-icon-outline" d="M319 448c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                            <path class="lexicon-icon-outline" d="M319 64c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="#1">Done</a></li>
+                                        <li><a href="#1">Reopen</a></li>
+                                        <li><a href="#1">Exclude</a></li>
+                                        <li><a data-target="#lexFullScreenModal" data-toggle="modal">Edit</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-cell-content">Evaluation matrix</td>
+                            <td class="table-cell-content">overall evaluation done</td>
+                            <td class="table-cell-content">
+                                <span class="badge badge-sm badge-primary">OPEN</span>
+                            </td>
+                            <td class="table-cell-content">01.12.18</td>
+                            <td class="table-cell-content">irmirmod tempor invidunt ut labo ...</td>
+                            <td class="table-cell-content">Peter Maier, FG-123</td>
+                            <td class="table-cell-content">
+                                <div class="dropdown">
+                                    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#1">
+                                        <svg aria-hidden="true" class="icon-monospaced lexicon-icon lexicon-icon-ellipsis-v" viewbox="0 0 512 512">
+                                            <path class="lexicon-icon-outline" d="M319 255.5c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                            <path class="lexicon-icon-outline" d="M319 448c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                            <path class="lexicon-icon-outline" d="M319 64c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="#1">Done</a></li>
+                                        <li><a href="#1">Reopen</a></li>
+                                        <li><a href="#1">Exclude</a></li>
+                                        <li><a data-target="#lexFullScreenModal" data-toggle="modal">Edit</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-cell-content">Q-Questionnaire</td>
+                            <td class="table-cell-content">Completion from supplier</td>
+                            <td class="table-cell-content">
+                                <span class="badge badge-sm badge-primary">OPEN</span>
+                            </td>
+                            <td class="table-cell-content">12.11.19</td>
+                            <td class="table-cell-content">This is a comment ...</td>
+                            <td class="table-cell-content">Peter Maier, FG-123</td>
+                            <td class="table-cell-content">
+                                <div class="dropdown">
+                                    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#1">
+                                        <svg aria-hidden="true" class="icon-monospaced lexicon-icon lexicon-icon-ellipsis-v" viewbox="0 0 512 512">
+                                            <path class="lexicon-icon-outline" d="M319 255.5c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                            <path class="lexicon-icon-outline" d="M319 448c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                            <path class="lexicon-icon-outline" d="M319 64c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="#1">Done</a></li>
+                                        <li><a href="#1">Reopen</a></li>
+                                        <li><a href="#1">Exclude</a></li>
+                                        <li><a data-target="#lexFullScreenModal" data-toggle="modal">Edit</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-cell-content">Evaluation matrix</td>
+                            <td class="table-cell-content">ready for Portal M/presentation</td>
+                            <td class="table-cell-content">
+                                <span class="badge badge-sm badge-primary">OPEN</span>
+                            </td>
+                            <td class="table-cell-content">01.12.20</td>
+                            <td class="table-cell-content">This is a comment ...</td>
+                            <td class="table-cell-content">Peter Maier, FG-123</td>
+                            <td class="table-cell-content">
+                                <div class="dropdown">
+                                    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#1">
+                                        <svg aria-hidden="true" class="icon-monospaced lexicon-icon lexicon-icon-ellipsis-v" viewbox="0 0 512 512">
+                                            <path class="lexicon-icon-outline" d="M319 255.5c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                            <path class="lexicon-icon-outline" d="M319 448c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                            <path class="lexicon-icon-outline" d="M319 64c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="#1">Done</a></li>
+                                        <li><a href="#1">Reopen</a></li>
+                                        <li><a href="#1">Exclude</a></li>
+                                        <li><a data-target="#lexFullScreenModal" data-toggle="modal">Edit</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-cell-content">LSV</td>
+                            <td class="table-cell-content">Complete acceptance by supplier</td>
+                            <td class="table-cell-content">
+                                <span class="badge badge-sm badge-default">EXCLUDED</span>
+                            </td>
+                            <td class="table-cell-content">12.11.21</td>
+                            <td class="table-cell-content">This is a comment ...</td>
+                            <td class="table-cell-content">Peter Maier, FG-123</td>
+                            <td class="table-cell-content">
+                                <div class="dropdown">
+                                    <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#1">
+                                        <svg aria-hidden="true" class="icon-monospaced lexicon-icon lexicon-icon-ellipsis-v" viewbox="0 0 512 512">
+                                            <path class="lexicon-icon-outline" d="M319 255.5c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                            <path class="lexicon-icon-outline" d="M319 448c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                            <path class="lexicon-icon-outline" d="M319 64c0 35.346-28.654 64-64 64s-64-28.654-64-64c0-35.346 28.654-64 64-64s64 28.654 64 64z"></path>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="#1">Done</a></li>
+                                        <li><a href="#1">Reopen</a></li>
+                                        <li><a href="#1">Exclude</a></li>
+                                        <li><a data-target="#lexFullScreenModal" data-toggle="modal">Edit</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div aria-labelledby="lexLargeModalLabel" class="fade modal" id="lexFullScreenModal" role="dialog" style="display: none;" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header"><button aria-labelledby="Close" class="btn btn-default close" data-dismiss="modal" role="button" type="button"><svg aria-hidden="true" class="lexicon-icon lexicon-icon-times" viewbox="0 0 512 512"> <path class="lexicon-icon-outline" d="M295.781 256l205.205-205.205c10.998-10.998 10.998-28.814 0-39.781-10.998-10.998-28.815-10.998-39.781 0l-205.205 205.205-205.205-205.238c-10.966-10.998-28.814-10.998-39.781 0-10.998 10.998-10.998 28.814 0 39.781l205.205 205.238-205.205 205.205c-10.998 10.998-10.998 28.815 0 39.781 5.467 5.531 12.671 8.265 19.874 8.265s14.407-2.734 19.907-8.233l205.205-205.238 205.205 205.205c5.5 5.5 12.703 8.233 19.906 8.233s14.407-2.734 19.906-8.233c10.998-10.998 10.998-28.815 0-39.781l-205.238-205.205z"></path> </svg></button><button class="btn btn-default modal-primary-action-button visible-xs" type="button"><span aria-hidden="true" class="lexicon-icon lexicon-icon-check">&nbsp;</span></button>
+
+                        <h4 class="modal-title">Checklist - EDIT</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3>No</h3>
+                                        <h5>CL-712345</h5>
+                                        <h3>Group</h3>
+                                        <h5>INDIVIDUAL</h5>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h3>Erstellt</h3>
+                                        <h5>21.12.2017</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <h3>
+                                                Activity
+                                            </h3>
+                                            <input class="form-control" type="text" placeholder="Name of Activity">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <h3>
+                                                Target Date
+                                            </h3>
+                                            <input class="form-control" type="text" placeholder="21.12.2018">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="toolbar-group-content toolbar-group-field">
+                                            <h3>State</h3>
+                                            <select class="form-control">
+                                                <option>Open</option>
+                                                <option>Closed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <h3>
+                                        Responsible QMS
+                                        <span class="reference-mark">
+                                            <svg aria-hidden="true" class="lexicon-icon lexicon-icon-asterisk">&nbsp;</svg>
+                                        </span>
+                                    </h3>
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="Marcus Strauss, MD-40" type="text" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">Search</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <h3>Comment</h3>
+                                    <textarea class="form-control" placeholder="Comment - max. 80 characters" rows="13"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer row">
+                        <div class="col-md-offset-7 col-md-1"><button class="btn btn-link close-modal" data-dismiss="modal" type="button">Cancel</button></div>
+                        <div class="col-md-offset-1 col-md-1"><button class="btn btn-link close-modal" data-dismiss="modal" type="button">Reset</button></div>
+                        <div class="col-md-offset-1 col-md-1"><button class="btn btn-primary close-modal" data-dismiss="modal" type="button">Save</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+</html>
+

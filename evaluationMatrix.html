@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>iSQ - Evaluation Matrix</title>
+
+        <link rel="stylesheet" href="./lib/css/base.css">
+        <link rel="stylesheet" href="./lib/css/bootstrap.css">
+        <link rel="stylesheet" href="./lib/css/atlas.css">
+        <link rel="stylesheet" href="./lib/css/atlas-font-awesome.css">
+
+        <style>
+            html {
+                background: #fff;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                background: #fff;
+            }
+            h2 {
+                color: #999;
+            }
+            .header-placeholder {
+                width: 100%;
+                height: 100px;
+                background: #f1f1f1;
+            }
+            .content-placeholder {
+                display: flex;
+
+            }
+            .menu-placeholder {
+                width: 350px;
+                height: 850px;
+                flex: 0 1 350px;
+                background: #f1f1f1;
+            }
+        </style>
+
+        <script src="./lib/js/jquery.min.js"></script>
+        <script src="./lib/js/popper.js"></script>
+        <script src="./lib/js/bootstrap.js"></script>
+    </head>
+    <body>
+
+        <div class="header-placeholder">&nbsp;</div>
+
+        <div class="content-placeholder">
+            <div class="menu-placeholder">&nbsp;</div>
+
+            <div class="container pt-3 p-0 p-md-3">
+                <h2 class="m-3 m-md-0">Evaluation Matrix</h2>
+
+                <hr /><span style="display: none;">&nbsp;</span><span style="display: none;">&nbsp;</span>
+
+                
+            <div class="management-bar row">
+                    <div class="col-sm-2">
+                        <div class="dropdown" style="display: inline-block;">
+                            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+                                Filter & Sorting
+                                <span aria-hidden="true" class="icon-caret-down"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-center">
+                                <li class="dropdown-header">Filter & Sorting</li>
+                                <li>
+                                    <form>
+                                        <div class="checkbox checkbox-default active">
+                                            <label>
+                                                <input checked="" value="" type="checkbox"> Source/Tools (Lvl 1)
+                                            </label>
+                                        </div>
+                                        <div class="checkbox checkbox-default active">
+                                            <label>
+                                                <input checked="" value="" type="checkbox"> Details (Level 2)
+                                            </label>
+                                        </div>
+                                        <div class="checkbox checkbox-default active">
+                                            <label>
+                                                <input checked="" value="" type="checkbox"> Comments
+                                            </label>
+                                        </div>
+                                        <div class="checkbox checkbox-default active">
+                                            <label>
+                                                <input checked="" value="" type="checkbox"> Highlight changes
+                                            </label>
+                                        </div>
+                                    </form>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Supplier Sort by</li>
+                                <li>
+                                    <form>
+                                        <div class="checkbox checkbox-default active">
+                                            <label>
+                                                <input checked="" value="" type="checkbox"> Alphanumeric
+                                            </label>
+                                        </div>
+                                        <div class="checkbox checkbox-default active">
+                                            <label>
+                                                <input checked="" value="" type="checkbox"> Column Supplier Ratings
+                                            </label>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <ul class="nav management-bar-nav">
+                
+                            <li>
+                                <a class="btn btn-default hidden-xs" href="#1">
+                                    <span class="icon-monospaced">
+                                        <span aria-hidden="true" class="icon-caret-up"></span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btn btn-default hidden-xs" href="#1">
+                                    <span class="icon-monospaced">
+                                        <span aria-hidden="true" class="icon-caret-down"></span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-1"></div>
+                
+                    <div class="col-sm-5 input-group">
+                        <input class="form-control" type="text" placeholder="Search (Rating Criteria)">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <svg class="lexicon-icon lexicon-icon-search" viewBox="0 0 512 512">
+                                    <path class="lexicon-icon-outline" d="M 503.254 467.861 l -133.645 -133.645 c 27.671 -35.13 44.344 -79.327 44.344 -127.415 c 0 -113.784 -92.578 -206.362 -206.362 -206.362 s -206.362 92.578 -206.362 206.362 s 92.578 206.362 206.362 206.362 c 47.268 0 90.735 -16.146 125.572 -42.969 l 133.851 133.851 c 5.002 5.002 11.554 7.488 18.106 7.488 s 13.104 -2.486 18.106 -7.488 c 10.004 -10.003 10.004 -26.209 0.029 -36.183 Z M 52.446 206.801 c 0 -85.558 69.616 -155.173 155.173 -155.173 s 155.174 69.616 155.174 155.173 s -69.616 155.173 -155.173 155.173 s -155.173 -69.616 -155.173 -155.173 Z"
+                                    />
+                                </svg>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Rating Criteria</th>
+                                <th>W</th>
+                                <th>Robert Bosch Automotive ...</th>
+                                <th>Continental Automotive GmbH</th>
+                                <th>Basch Automotive</th>
+                                <th>Another Supplier GmbH</th>
+                                </tr>
+                        </thead>
+        
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Manufacturing Site</td>
+                                <td>45</td>
+                                <td><span class="label label-warning">2,2</span></td>
+                                <td><span class="label label-success">2,8</span></td>
+                                <td><span class="label label-danger">1,8</span></td>
+                                <td><span class="label label-warning">2,1</span></td>
+                            </tr>
+                            <tr>
+                                <td>1.2</td>
+                                <td>Managment Support (Quantity and Quality)</td>
+                                <td>5</td>
+                                <td><a data-target="#lexSmallModal1" data-toggle="modal"><span class="label label-success">3</span></a><span class="label label-success"></span></td>
+                                <td><span class="label label-success">3</span></td>
+                                <td><span class="label label-danger">1</span></td>
+                                <td><span class="label label-success">3</span></td>
+                            </tr>
+                            <tr>
+                                <td>1.3</td>
+                                <td>Confirmation LSV (Acceptance of all Points)</td>
+                                <td>8</td>
+                                <td><span class="label label-danger">1</span></td>
+                                <td><span class="label label-success">3</span></td>
+                                <td><span class="label label-success">3</span></td>
+                                <td><span class="label label-warning">2</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Q-Questionnaire</td>
+                                <td>45</td>
+                                <td><span class="label label-warning">1,8</span></td>
+                                <td><span class="label label-success">2,7</span></td>
+                                <td><span class="label label-danger">1,2</span></td>
+                                <td><span class="label label-warning">2,3</span></td>
+                            </tr>
+                            <tr>
+                                <td>2.1</td>
+                                <td>Chapter 1 - QM System according to ISO 9001</td>
+                                <td>45</td>
+                                <td><span class="label label-success">3</span></td>
+                                <td><span class="label label-success">3</span></td>
+                                <td><span class="label label-danger">1</span></td>
+                                <td><span class="label label-success">3</span></td>
+                            </tr>
+                            <tr>
+                                <td>2.2</td>
+                                <td>Chapter 2 - Organisation</td>
+                                <td>8</td>
+                                <td><span class="label label-danger">1</span></td>
+                                <td><span class="label label-success">3</span></td>
+                                <td><span class="label label-success">3</span></td>
+                                <td><span class="label label-warning">2</span></td>
+                            </tr>
+                            <tr>
+                                    <td></td>
+                                    <td>Chances / Risks</td>
+                                    <td></td>
+                                    <td>-25</td>
+                                    <td>20</td>
+                                    <td>-60</td>
+                                    <td>40</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Sum (w/o Measures, w/ Chances Risks)</td>
+                                    <td></td>
+                                    <td>757</td>
+                                    <td>1085</td>
+                                    <td>688</td>
+                                    <td>745</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Measures</td>
+                                    <td></td>
+                                    <td>65</td>
+                                    <td>35</td>
+                                    <td>20</td>
+                                    <td>40</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Sum</td>
+                                    <td></td>
+                                    <td>822</td>
+                                    <td>1120</td>
+                                    <td>708</td>
+                                    <td>785</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>BMW Comment per Supplier on Q-Questionnaire</td>
+                                    <td></td>
+                                    <td>Resource Problem</td>
+                                    <td>It's Important note that the supplier cur</td>
+                                    <td>1234 6789 1234 6789<br>1234 6789 1234 6789<br>1234 6789 1234 6789</td>
+                                    <td>irmod tempor</td>
+                                </tr>
+                        </tbody>
+                    </table>
+                    </div>
+            </div>
+        </div>
+
+        <div aria-labelledby="lexSmallModalLabel" class="fade modal" id="lexSmallModal1" role="dialog" style="display: none;" tabindex="-1">
+            <div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="btn btn-default close" role="button" aria-labelledby="Close" type="button" data-dismiss="modal">
+							<svg xmlns="http://www.w3.org/2000/svg" class="lexicon-icon lexicon-icon-times" aria-hidden="true" viewBox="0 0 512 512">
+							    <path class="lexicon-icon-outline" d="M 295.781 256 l 205.205 -205.205 c 10.998 -10.998 10.998 -28.814 0 -39.781 c -10.998 -10.998 -28.815 -10.998 -39.781 0 l -205.205 205.205 l -205.205 -205.238 c -10.966 -10.998 -28.814 -10.998 -39.781 0 c -10.998 10.998 -10.998 28.814 0 39.781 l 205.205 205.238 l -205.205 205.205 c -10.998 10.998 -10.998 28.815 0 39.781 c 5.467 5.531 12.671 8.265 19.874 8.265 s 14.407 -2.734 19.907 -8.233 l 205.205 -205.238 l 205.205 205.205 c 5.5 5.5 12.703 8.233 19.906 8.233 s 14.407 -2.734 19.906 -8.233 c 10.998 -10.998 10.998 -28.815 0 -39.781 l -205.238 -205.205 Z" />
+                            </svg>
+                        </button>
+                        
+						<button class="btn btn-default modal-primary-action-button visible-xs" type="button">
+							<svg xmlns="http://www.w3.org/2000/svg" class="lexicon-icon lexicon-icon-check" aria-hidden="true" viewBox="0 0 512 512">							
+                                <path class="lexicon-icon-outline" d="M 502.091 60.993 c -9.909 -9.91 -25.962 -9.91 -35.843 0 l -336.988 336.988 l -83.508 -83.451 c -9.881 -9.909 -25.962 -9.909 -35.843 0 c -9.909 9.909 -9.909 25.962 0 35.843 l 98.257 98.257 c 2.608 2.608 5.679 4.433 8.924 5.679 c 4.028 2.464 8.403 4.115 12.952 4.115 c 6.49 0 12.981 -2.464 17.936 -7.418 l 354.112 -354.141 c 9.909 -9.909 9.909 -25.962 0 -35.871 l 0 -0.001 Z" />
+                            </svg>
+                        </button>
+                        
+						<h4 class="modal-title" id="lexSmallModal1Label">Basch Automotive <br> 1.2 Management Support</h4>
+					</div>
+
+					<div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-6">Original Rating</div>
+                            <div class="col-sm-6"><span class="label label-danger">1</span></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Original Comment</label>
+                            <textarea class="form-control" placeholder="It's important note that the supplier is cur"></textarea>
+                        </div>
+                        Override Rating & Comment <br>
+                        <div class="row">
+                            <div class="col-sm-3">Rating</div>
+                            <div class="col-sm-3"><span class="label label-warning">2 </span></div>
+                            <div class="col-sm-6"><li class="dropdown">
+                                    <a class="dropdown-toggle" aria-expanded="false" href="#1" data-toggle="dropdown">
+                                        <span class="management-bar-item-title">Medium</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="lexicon-icon lexicon-icon-caret-double-l" aria-hidden="true" viewBox="0 0 512 512">
+                                            <path class="lexicon-icon-outline" d="M 347.913 199.336 l -81.538 -85 c -5.413 -5.642 -14.188 -5.642 -19.6 0 l -81.538 85 c -8.731 9.101 -2.548 24.664 9.8 24.664 h 163.077 c 12.348 0 18.531 -15.563 9.8 -24.664 Z" />
+                                            <path class="lexicon-icon-outline" d="M 165.236 312.664 l 81.538 85 c 5.412 5.642 14.188 5.642 19.6 0 l 81.538 -85 c 8.731 -9.101 2.548 -24.664 -9.8 -24.664 h -163.077 c -12.347 0 -18.531 15.563 -9.8 24.664 Z" />
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>High</li>
+                                        <li>Medium</li>
+                                        <li>Low</li>
+                                    </ul>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Comment</label>
+                            <textarea class="form-control" placeholder="Original Rating does not FIT- I Overrule"></textarea>
+                        </div>
+                    </div>
+
+					<div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-6"><button class="btn btn-default" type="button">Reset</button></div>
+                            <div class="col-md-6 text-right"><button class="btn btn-primary close-modal" data-dismiss="modal" type="button">Save</button></div>
+                        </div>
+					</div>
+				</div>
+			</div>
+        </div>
+    </body>
+</html>
+
